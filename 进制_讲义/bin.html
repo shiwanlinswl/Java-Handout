@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>bin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p>面试题目: </p>
+<pre><code>System.out.println(51 &amp; 7);
+如上代码的结果是(__3__) 
+答案：
+
+00000000 00000000 00000000 00110011
+00000000 00000000 00000000 00000111
+</code></pre>
+
+<h1>2进制</h1>
+<ol>
+<li>计算机内部“只有”2进制数据。</li>
+<li>任何信息都必须转换为2进制，再由计算机处理。</li>
+</ol>
+<p>案例：</p>
+<pre><code>int i = 50;
+System.out.println(Integer.toBinaryString(i));
+</code></pre>
+
+<p><img src="2.png" /></p>
+<h2>什么是2进制</h2>
+<p>逢2进1的计数规则：</p>
+<p><img src="bin.png" /></p>
+<h2>16进制</h2>
+<p>2进制书写十分不方便：</p>
+<pre><code>00100111 10100010 10111111 01011101
+</code></pre>
+
+<p>利用16进制缩写（简写）2进制，目的就是方便书写</p>
+<p><img src="bin.png" /></p>
+<h2>补码</h2>
+<p>4位数补码：</p>
+<p><img src="3.png" /></p>
+<p>经典题目：</p>
+<pre><code>int i = 0xffffffff;
+System.out.println(i);
+选择如上代码输出结果（  ）
+A.2147483647 B.-2147483648 C.2147483648 D.-1
+&gt; 答案： D
+</code></pre>
+
+<h3>补码的互补对称现象</h3>
+<p>经典题目：</p>
+<pre><code>int i = 8;
+System.out.println(~i+1);
+如上代码输出结果（  ）
+A.8 B.-8 C.9 D.-9
+&gt; 答案: B
+
+int i = -8;
+System.out.println(~i+1);
+如上代码输出结果（  ）
+A.8 B.-8 C.9 D.-9
+&gt; 答案: A
+
+int i = -8;
+System.out.println(~i);
+如上代码输出结果（  ）
+A.8 B.-8 C.9 D.-9 E.7
+&gt; 答案: E
+</code></pre>
+
+<h2>2进制的运输符</h2>
+<p>~ 取反  &amp; 与运算   | 或运算  &gt;&gt;&gt; 逻辑右移位  &gt;&gt; 数学右移位 &lt;&lt;左移位</p>
+<p>案例：</p>
+<pre><code>将一个中文字拆分为UTF-8编码的字节。
+</code></pre>
+
+<p><img src="utf.png" /></p>
+<h3>&amp; 与运算（逻辑乘法）</h3>
+<pre><code>运算规则：
+
+0 &amp; 0 = 0
+0 &amp; 1 = 0
+1 &amp; 0 = 0
+1 &amp; 1 = 1
+</code></pre>
+
+<p>案例：</p>
+<pre><code>n =     00000000 00000000 01001110 00101101 
+m =     00000000 00000000 00000000 00111111
+k = n&amp;m 00000000 00000000 00000000 00101101 
+
+//如上运算的结果： k是n的后6位数！
+
+int n = 0x4e2d;
+int m = 0x3f;
+int k = n&amp;m;
+//2进制输出
+</code></pre>
+
+<h3>| 或运算(逻辑加法)</h3>
+<p>基本运算规则：</p>
+<pre><code>0 | 0 = 0
+1 | 0 = 1
+0 | 1 = 1
+1 | 1 = 1
+</code></pre>
+
+<p>案例：</p>
+<pre><code>int k =     00000000 00000000 00000000 00110101
+int n =     00000000 00000000 00000000 10000000
+int m = k|n 00000000 00000000 00000000 10110101 
+</code></pre>
+
+<p>代码：</p>
+<pre><code>int k = 0x35;
+int n = 0x80;
+int m = k|n;
+//验证结果：按照2进制输出
+</code></pre>
+
+<h3><code>&gt;&gt;&gt;</code> 逻辑右移位</h3>
+<p>规则：</p>
+<pre><code>2进制数字整体向右移动，高位补0
+</code></pre>
+
+<p>案例:</p>
+<pre><code>n =        00000000 00000000 00000000 10101101
+m = n&gt;&gt;&gt;1  000000000 00000000 00000000 1010110
+k = n&gt;&gt;&gt;2  0000000000 00000000 00000000 101011 
+</code></pre>
+
+<p>代码：</p>
+<pre><code>int n = 0xad;
+int m = n&gt;&gt;&gt;1;
+int k = n&gt;&gt;&gt;2;
+//按照2进制输出。
+</code></pre>
+
+<h3>移位运算的数学意义</h3>
+<p>复习</p>
+<pre><code>n =   1302332.
+m =  13023320.  m 是 n的10倍
+k = 130233200.  k 是 n的100倍
+
+如果看做小数点不动，则数字向左移动
+</code></pre>
+
+<p>2进制时候，规律依然存在： 数字向左移动一次，扩大2倍</p>
+<pre><code>n =      00000000 00000000 00000000 00110010. 50
+m =n&lt;&lt;1  0000000 00000000 00000000 001100100. 100
+k =n&lt;&lt;2  000000 00000000 00000000 0011001000. 200
+</code></pre>
+
+<p>案例：</p>
+<pre><code>int n = 50;
+int m = n&lt;&lt;1;
+int k = n&lt;&lt;2;
+//int t = n&lt;&lt;(65%32);
+//输出n，m，k的十进制和2进制
+</code></pre>
+
+<p>经典</p>
+<pre><code>优化计算 n*8 
+答：（ n&lt;&lt;3 ）
+</code></pre>
+
+<h3>比较 &gt;&gt;&gt; 和 &gt;&gt;</h3>
+<blockquote>
+<blockquote>
+<p>数学右移位：满足数学规律（小方向取整）正数高位补0，负数高位补1，保持符号不变。</p>
+<blockquote>
+<p>逻辑右移位：无论正负高位都补0</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>案例：</p>
+<pre><code>n  =    11111111 11111111 11111111 11001101  -51
+m=n&gt;&gt;1  111111111 11111111 11111111 1100110  -26
+k=n&gt;&gt;2  1111111111 11111111 11111111 110011  -13
+
+x=n&gt;&gt;&gt;1 011111111 11111111 11111111 1100110  发生符号反转
+</code></pre>
+
+<hr />
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

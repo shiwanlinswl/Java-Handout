@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//使用json语法表示一个对象
+	function f1(){
+		var s = {"code":"600877",
+				"name":"中国嘉陵","price":8};
+		alert(s.name);
+	}
+	
+	function f2(){
+		var obj = {"name":"北京达内",
+				"address":{
+					"city":"北京",
+					"street":"北三环西路18号",
+					"room":708
+				}
+		};
+		alert(obj.address.street);
+	}
+	
+	//使用json语法表示由对象组成的数组
+	function f3(){
+		var arr = [{"name":"悟空","salary":1000},
+		           {"name":"八戒","salary":800}];
+		alert(arr[1].salary);
+	}
+	
+	//将json字符串转换成js对象
+	function f4(){
+		var str = '{"name":"悟空","salary":1000}';
+		//使用js内置对象JSON的parse方法来转换
+		var obj = JSON.parse(str);
+		alert(obj.name);
+	}
+	
+	function f5(){
+		var str = '[{"name":"悟空","salary":1000},' 
+		         + '{"name":"八戒","salary":800}]';
+		//使用js内置对象JSON的parse方法来转换
+		var arr = JSON.parse(str);
+		alert(arr[1].name);
+		
+	}
+</script>
+</head>
+<body style="font-size:30px;">
+
+	<a href="javascript:f5();">ClickMe</a>
+
+
+
+
+
+</body>
+</html>

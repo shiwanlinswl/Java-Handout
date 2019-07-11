@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" 
+	src="js/jquery-1.4.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#uname').blur(f2);
+	});
+	
+	function f2(){
+		$.ajax({
+			"url":"check.do",
+			"type":"post",
+			"data":{"uname":$('#uname').val()},
+			"dataType":"text",
+			"success":function(data){
+				$('#msg').html(data);
+			}
+		});
+	}
+	
+	function f1(){
+		$('#msg').load('check.do',
+				'uname=' + $('#uname').val());
+	}
+	
+</script>
+</head>
+
+
+<body style="font-size:30px;">
+	<form>
+		<fieldset>
+			<legend>注册</legend>
+			用户名:<input id="uname" name="uname"/>
+			<span id="msg" style="color:red;"></span>
+			<br/>
+			密码:<input type="password" name="pwd"/><br/>
+			<input id="b1" type="button" value="确定"/>
+		</fieldset>
+	</form>
+</body>
+</html>
+
+
+

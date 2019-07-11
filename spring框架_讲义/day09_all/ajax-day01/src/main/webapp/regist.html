@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/ajax.js">
+</script>
+
+<script type="text/javascript">
+	function check(){
+		//step1.获得ajax对象
+		var xhr = getXhr();
+		
+		//step2.发送请求
+		var uri = 'check.do?uname=' + $F('uname');
+		xhr.open('get',encodeURI(uri),true);
+		
+		xhr.onreadystatechange = function(){
+			//step4.处理服务器返回的数据
+			if(xhr.readyState == 4 && 
+					xhr.status == 200){
+				//要等到已经收到了服务器返回的所有数据
+				//,并且服务器处理成功。
+				var txt = xhr.responseText;
+				$('msg').innerHTML = txt;
+			}
+		};
+		xhr.send(null);
+	}
+</script>
+</head>
+<body style="font-size:30px;">
+	<form action="xxx.do" method="post">
+		<fieldset>
+			<legend>注册</legend>
+			用户名:<input id="uname" name="uname" 
+			onblur="check();"/>
+			<span id="msg" style="color:red;"></span>
+			<br/>
+			密码:<input type="password" name="pwd"/><br/>
+			<input type="submit" value="确定"/>
+		</fieldset>
+	</form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" 
+src="js/jquery-1.4.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#a1').click(f2);
+	});
+	
+	function f2(){
+		$('#s1').load('getNumber.do');
+	}
+	
+	function f1(){
+		$.ajax({
+			"url":"getNumber.do",
+			"type":"post",
+			"dataType":"text",
+			"success":function(data){
+				$('#s1').html(data);
+			}
+		});
+	}
+</script>
+
+
+
+</head>
+<body style="font-size:30px;">
+	<a id="a1" href="javascript:;">点这儿显示一个随机整数</a>
+	<br/>
+	<span id="s1"></span>
+</body>
+</html>
+
+
